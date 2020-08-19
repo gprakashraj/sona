@@ -1,0 +1,12 @@
+[Unit]
+Description=sonar 7
+After=network.target network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/home/centos/sonarqube-8.4.1.35646/bin/linux-x86-64/sonar.sh start
+ExecStop=/home/centos/sonarqube-8.4.1.35646/bin/linux-x86-64/sonar.sh stop 
+ExecReload=/home/centos/sonarqube-8.4.1.35646/bin/linux-x86-64/sonar.sh restart
+Type=forking
+User=centos
+
